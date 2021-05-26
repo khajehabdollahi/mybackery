@@ -1,0 +1,31 @@
+<% layout('layout/boilerplate') %> 
+  <h1>Here you can edit information about backeries</h1>
+  <form action="/newb/<%=backery._id %>?_method=PUT " method="POST">
+    
+    <label for="backerysname">Backery's Name</label> <br/>
+  <input type="text" name="backerysname" id="backerysname" value="<%=backery.backerysname %> "> <br/> <br/>
+
+
+<label for="ownersName">Owners's Name</label> <br/>
+  <input type="text" name="ownersName" id="ownersName" value="<%=backery.ownersName%> "> <br/> <br/>
+  
+ <label for="ownersFamily">Owners's Family</label> <br/>
+  <input type="text" name="ownersFamily" id="ownersFamily" value="<%=backery.ownersFamily%>"><br/> <br/>
+
+ <label for="numberOfPoorPeople">  Average Monthly Incom Per Person</label><br/>
+  <input type="number" name="numberOfPoorPeople" id="numberOfPoorPeople" value="<%=backery.numberOfPoorPeople%>"> <br><br>
+
+ <label for="averageMonthlyIncomPerPerson">  Average Monthly Incom Per Person</label><br/>
+  <input type="number" name="averageMonthlyIncomPerPerson" id="averageMonthlyIncomPerPerson" value="<%=backery.averageMonthlyIncomPerPerson%>"> <br><br>
+
+
+<label for="location"> Backerys Location</label><br/>
+  <input type="text" name="location" id="location" value="<%=backery.location%>"> <br><br>
+
+ <label for="creator"> Backerys Account creator</label><br/>
+  <input type="text" name="creator" id="creator" value="<%=backery.creator%>"> <br><br>
+
+
+  <button type="submit">Save new Information</button> <br><br>
+  </form>
+

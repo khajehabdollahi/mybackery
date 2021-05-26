@@ -1,0 +1,26 @@
+<% layout('layout/boilerplate') %> 
+
+<ul>
+<li> Backerys name: <%= backery.backerysname %> </li>
+<li>Owners Name:  <%= backery.ownersName %> </li>
+<li>Owners Family: <%= backery.ownersFamily %> </li>
+<li>Number Of Poor People: <%= backery.numberOfPoorPeople %> </li>
+<li>Average Monthly Incom Per Person: <%= backery.averageMonthlyIncomPerPerson %> </li>
+<li>Backery Location: <%= backery.location %> </li>
+<li>Backery Creator: <%= backery.creator %> </li>
+<li>Image: <%=  %> </li>
+
+
+
+</ul>
+
+<a href="http:/newb/<%=backery.id %>/edit ">Edit Backery information</a>
+
+<br/> <br/>
+
+  <form action="/newb/<%=backery._id %>?_method=DELETE" method="POST">
+    <button class="delete">Delete</button>
+
+  </form>
+
+ 

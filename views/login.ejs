@@ -1,0 +1,29 @@
+
+<% layout('layout/boilerplate') %> 
+  <h1> Here is Login Page </h1>
+
+  <container  class="d-flex column-justify-content-center">
+<div>
+<form  action="/login" method="POST" class="validated-form novalidate ">
+
+  <div class="mb-3">
+  <label class="form-label" for="username">Email</label><br>
+  <input class="form-control" type="email" name="email" id="email" placeholder="email"required>
+  
+</div>
+
+
+<div class="mb-3">
+  <label class="form-label" for="password">Password</label><br>
+  <input class="form-control" type="password" name="password" id="password" required>
+</div>
+
+<button type="submit" class="button-success">LOG IN</button>
+</form>
+</div>
+<br/>
+<div display=flex, class="ml-5" "mt=15"><br/>
+<h6 >Don't you have an account?</h6> <br>
+ <a class="nav-link" href='/Register'>Register Account</a>
+</div>
+ </container>

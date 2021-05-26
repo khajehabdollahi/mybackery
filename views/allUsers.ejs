@@ -1,0 +1,26 @@
+<% layout('layout/boilerplate') %> 
+<h1>Here you can see all yousers</h1>
+ <ul>
+    <% for(let user of allUsers) { %>
+      <div class="card">
+        <div class="row">
+          <div class="col-md-12">
+  
+  <li>User Id: <%= user.id %> <br/> 
+    <li>Email: <%= user.email %> <br/> 
+    <li>Name: <%= user.name %> <br/> 
+    
+    <a href="/users/<%= user.id %>">Click here to see details</a>
+    
+     
+  
+    <br>
+
+    </li> 
+          </div>
+        </div>
+      </div>
+   
+
+   <%} %>
+  </ul>

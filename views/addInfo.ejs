@@ -1,0 +1,38 @@
+<% layout('layout/boilerplate') %> 
+<h1>Welcome Please add information about Backery</h1>
+
+ <form action="/backeries/<%=backery._id %>?_method=PUT " method="POST">
+    <label for="name">Backery's Name</label> <br/>
+  <input type="text" name="name" id="name" value="<%=backery.name %> "> <br/> <br/>
+<label for="email">Backey's Email</label><br/>
+  <input type="email" name="email" id="email" value="<%=backery.email%>"><br/><br/>
+
+ <label for="ownersName">Owners's Name</label> <br/>
+  <input type="text" name="owner" id="ownersName" value="<%=backery.ownersName%> "> <br/> <br/>
+
+ <label for="Family">Owners's Family</label> <br/>
+  <input type="text" name="family" id="family"  value="<%=backery.family%> "> <br/> <br/>
+
+ <label for="number">Number of Poor people</label> <br/>
+  <input type="number" name="number" id="number"  "> <br/> <br/>
+
+ <label for="income">Average Income per Person among poor ones</label> <br/>
+  <input type="number" name="income" id="income"  "> <br/> <br/>
+
+ <label for="province">province</label> <br/>
+  <input type="text" name="province" id="province"> <br/> <br/>
+
+ <label for="city">City</label> <br/>
+  <input type="text" name="city" id="city"> <br/> <br/>
+
+ <label for="street">Street</label> <br/>
+  <input type="text" name="street" id="street"> <br/> <br/>
+
+ <label for="location">Street</label> <br/>
+  <input type="text" name="location" id="location"> <br/> <br/>
+
+
+ 
+ 
+  <button type="submit">Save new Information</button> <br><br>
+  </form>

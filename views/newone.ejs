@@ -1,0 +1,31 @@
+<% layout('layout/boilerplate') %> 
+
+<h1>Here are new backeries</h1>
+
+
+<form action="/newb" method="POST" enctype="multipart/form">
+<label for="backerysname">backerysname</label> <br/> 
+  <input type="text" name="backerysname" id="backerysname"><br/> <br/>
+
+  <label for="ownersName">Owners's Name</label> <br/>
+  <input type="text" name="ownersName" id="ownersName" > <br/> <br/>
+
+ <label for="ownersFamily">Owners's Family</label> <br/>
+  <input type="text" name="ownersFamily" id="ownersFamily"  "> <br/> <br/>
+
+ <label for="numberOfPoorPeople">Number of Poor people</label> <br/>
+  <input type="number" name="numberOfPoorPeople" id="numberOfPoorPeople"  > <br/> <br/>
+
+ <label for="averageMonthlyIncomPerPerson">Average Income per Person among poor ones</label> <br/>
+  <input type="number" name="averageMonthlyIncomPerPerson" id="averageMonthlyIncomPerPerson"  > <br/> <br/>
+
+ <label for="location">location</label> <br/>
+  <input type="text" name="location" id="location"> <br/> <br/>
+
+ <label for="creator">creator</label> <br/>
+  <input type="text" name="creator" id="creator" > <br/> <br/>
+ 
+<input type="file" name="image" id="image"> <br/> <br/>
+
+ <button type="submit">Create</button> <br/> <br/>
+</form>
