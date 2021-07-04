@@ -1,0 +1,21 @@
+<% layout('layout/boilerplate') %> 
+<h1>Welcome to donate page</h1>
+<h3>Please Login to donate the money if you dont't have account pleasr register</h3>
+
+<form action="/d " method="POST">
+<label for="amount">How much do u want to donate? <label/> <br/>
+  <input type="number" name="amount" id="amount" placeholder="How much do u want to donate?"> <br/><br/>
+
+  <label for="backeryId"><h2>It will be donated to </h2>  <label/>
+
+  
+    <input type="text" name="backeryId" id="backeryId" value="<%=id %>">
+<br/>
+    <label for="doneatorId">donatorId <label/>
+  
+  <input type="text" name="doneatorId" id="doneatorId" value="<%=currentUser.id  %>">
+
+
+
+  <button type="submit">donate</button>
+</form>

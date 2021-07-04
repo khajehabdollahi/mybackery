@@ -1,0 +1,19 @@
+<% layout('layout/boilerplate') %> 
+
+
+<form action="/donateconfirm/<%=donate._id %>?_method=PUT " method="POST">
+  
+   <h1>You have received:<%=donate.amount %> </h1>
+   
+   <h3> <a href="/users/<%=donate.doneatorId %>">From this person</a>  </h3>
+
+<h2> Is it right?</h2>
+<h2> Press the button below to Confirm</h2>
+
+<input type="text" name="confirmation" id="confirmation" value="true">
+
+
+
+  <button type="submit">Confirm Received Donation</button> <br><br>
+  </form>
+ 

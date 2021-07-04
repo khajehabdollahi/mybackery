@@ -1,12 +1,10 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const backerySchema = new mongoose.Schema({
-
   backerysname: {
     type: String,
     required: true,
   },
- 
   ownersName: {
     type: String,
     required: true,
@@ -21,24 +19,29 @@ const backerySchema = new mongoose.Schema({
   },
   averageMonthlyIncomPerPerson: {
     type: Number,
+    required: true,
+  },
+  image: {
+    type: String
   },
   location: {
     type: String,
   },
+  donations: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Donation",
+    },
+  ],
   creator: {
-    type: String,
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+    username: String,
   },
-  cCreator: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref:'Userr'
-  }
 });
 
+const Newbackery = mongoose.model("Backery", backerySchema);
 
-const Backery = mongoose.model('Backery', backerySchema)
-
-module.exports = Backery
-
-
- 
-   
+module.exports = Newbackery;

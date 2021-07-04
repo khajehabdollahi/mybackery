@@ -1,5 +1,5 @@
  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
-  <a class="navbar-brand" href="/">Breed Help</a>
+  <a class="navbar-brand" href="/">Bread Help</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,20 +14,20 @@
       <li class="nav-item">
         <a class="nav-link" href='/users'>All accounts</a>
       </li>
-      
-     
-      
    
+      <% if(!currentUser){ %> 
         <li class="nav-item"></li>
-        <a class="nav-link" href='/login'>Log In / create Account</a>
-         
+          <a class="nav-link" href='/login'>Log In / create Account</a>
+        </li>
+      <% } else {%> 
+        </li>
+      <li >
+         welcome  <%=currentUser.name  %>  
       </li>
-  
-       
       <li class="nav-item">
-        <a class="nav-link" href='/logout'>Log Out </a>
-      </li>
-   
+        <a class="nav-link" href='/logout'>    Log Out </a>
+     </li>
+   <% } %> 
      
    
       

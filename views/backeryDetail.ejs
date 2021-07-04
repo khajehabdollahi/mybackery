@@ -7,20 +7,68 @@
 <li>Number Of Poor People: <%= backery.numberOfPoorPeople %> </li>
 <li>Average Monthly Incom Per Person: <%= backery.averageMonthlyIncomPerPerson %> </li>
 <li>Backery Location: <%= backery.location %> </li>
-<li>Backery Creator: <%= backery.creator %> </li>
-<li>Image: <%=  %> </li>
+<li>Backery Id: <%= backery.id %> </li>
+<img src=<%=backery.image %> alt="Backery Image" width="100%"> 
 
+<h1>Donations</h1>
+
+<% for (let donate of donations.reverse()) {%> 
+  <ul>
+    <li>Donated Amount: <%=donate.amount  %>   SEK</li>
+    <li>Confirmation: <%=donate.confirmation  %>   </li>
+    <li><a href="http:/donateconfirm/<%= donate.id  %> ">Confirm Donation</a></li>
+    <li><a href="http:/addimage/<%= donate.id  %>"></a> Add image</li>
+
+  </ul>
+<% } %> 
+  
 
 
 </ul>
 
-<a href="http:/newb/<%=backery.id %>/edit ">Edit Backery information</a>
+<% if(!currentUser || currentUser.username !=backery.creator.username ) { %> 
+
+<br/>
+  <br/><a href="http:/users/<%= backery.creator.id %>">Creator</a><br/><br/>
+
+   <a href="/donate/<%= backery.id %>">Donate to this backery</a> <br> 
+
+
+
+
+
+ <% } else {%> 
+  
+  <a href="http:/newb/<%=backery.id %>/edit ">Edit Backery information</a>
 
 <br/> <br/>
 
   <form action="/newb/<%=backery._id %>?_method=DELETE" method="POST">
     <button class="delete">Delete</button>
 
-  </form>
+  </form> <br>
 
- 
+   <% } %> 
+
+
+
+
+   <% if(!currentUser || currentUser.role !='backer' ) { %> 
+
+<br/>
+
+
+
+
+
+
+
+
+ <% }%>
+
+
+ <!-- <script>
+  function confirmDonation(){
+    console.log("I am in the click!"); 
+  }
+</script> -->
