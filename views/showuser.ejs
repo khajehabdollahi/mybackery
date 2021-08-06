@@ -7,11 +7,12 @@
  Role: <%= user.role %> <br>
 <br>
  
-<% if(currentUser && currentUser.username == user.username && user.role!='d') { %> 
+<% if(currentUser && currentUser.username == user.username ) { %> 
 
 
-<a href="/newones">Create backery</a>
+<a href="/newones">Create backery</a> <br/>
+
 
 <% } %> 
 
-<!-- <a href="http://activate/<%= user.id%> ">Activate ur id pls</a> <br/>
+ <a href="http://activate/<%= user.id%> ">Activate ur id pls</a> 

@@ -14,6 +14,9 @@
       <li class="nav-item">
         <a class="nav-link" href='/users'>All accounts</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href='/search'>Search</a>
+      </li>
    
       <% if(!currentUser){ %> 
         <li class="nav-item"></li>
@@ -21,7 +24,7 @@
         </li>
       <% } else {%> 
         </li>
-      <li >
+      <li  >
          welcome  <%=currentUser.name  %>  
       </li>
       <li class="nav-item">

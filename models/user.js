@@ -13,8 +13,12 @@ let userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    // enum: ["volenteer", "backer", "donator"],
+    // enum: ["V", "B", "D"],
     required: true,
+  },
+  activated: {
+    type: Boolean
+    
   }
 });
 

@@ -1,0 +1,22 @@
+ <% layout('layout/boilerplate') %> 
+<h1>Search according to Village name</h1>
+
+ <container  class="d-flex column-justify-content-center">
+<div>
+<form  action="/search/village" method="POST" class="validated-form novalidate ">
+
+  <div class="mb-3">
+  <label class="form-label" for="vi">Please write the name of Village</label><br>
+  <input type="text" name="vi" id='vi'>
+  
+</div>
+
+
+
+
+<button type="submit" class="button-success">Search</button>
+</form>
+</div>
+<br/>
+
+ </container>

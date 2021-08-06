@@ -1,0 +1,22 @@
+ <% layout('layout/boilerplate') %> 
+<h1>Search according to Number of Poor People</h1>
+
+  <container  class="d-flex column-justify-content-center">
+<div>
+<form  action="/search/numberpoor" method="POST" class="validated-form novalidate ">
+
+  <div class="mb-3">
+  <label class="form-label" for="numberOfPoorPeople">Please write the number Of Poor People</label><br>
+  <input type="number" name="searchKey" id='searchKey'>
+  
+</div>
+
+
+
+
+<button type="submit" class="button-success">Search</button>
+</form>
+</div>
+<br/>
+
+ </container>

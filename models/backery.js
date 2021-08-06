@@ -22,7 +22,34 @@ const backerySchema = new mongoose.Schema({
     required: true,
   },
   image: {
-    type: String
+    type: String,
+  },
+  provience: {
+    type: String,
+  },
+  city: {
+    type: String,
+  },
+  district: {
+    type: String,
+  },
+  village: {
+    type: String,
+  },
+  Street: {
+    type: String,
+  },
+  line: {
+    type: String,
+  },
+  number: {
+    type: String,
+  },
+  postCode: {
+    type: String,
+  },
+  mobileNumber: {
+    type: Number,
   },
   location: {
     type: String,

@@ -1,0 +1,39 @@
+ <% layout('layout/boilerplate') %> 
+
+
+<h1> You searched this provience:  </h1>
+<h2>Here is the result:</h2>
+
+ <ul>
+    <% for(let backry of backery) { %>
+      <div class="card">
+        <div class="row">
+          <div class="col-md-12">
+            
+ <a href="/newb/<%= backry.id %>"><%= backry.backerysname %></a>
+
+  <li>Backerys Name: <%= backry.backerysname %> <br/> <br/> <br/>
+  <li>owners Name: <%= backry.ownersName %> <br/> <br/> <br/>
+  <li>owners Family: <%= backry.ownersFamily %> <br/> <br/> <br/>
+  <li>number Of Poor People: <%= backry.numberOfPoorPeople%> <br/> <br/> <br/>
+  <li>average Monthly Income Per Person: <%= backry.averageMonthlyIncomPerPerson %> <br/> <br/> <br/>
+  <li>location: <%= backry.location %> <br/> <br/> <br/>
+  <li>City: <%= backry.city %> <br/> <br/> <br/>
+  <li>Provience: <%= backry.provience %> <br/> <br/> <br/>
+  <li>district: <%= backry.district %> <br/> <br/> <br/>
+  <li>Street: <%= backry.Street %> <br/> <br/> <br/>
+  <li>Line: <%= backry.line %> <br/> <br/> <br/>
+      
+
+
+  
+    
+    
+    </li> 
+          </div>
+        </div>
+      </div>
+   
+
+   <%} %>
+  </ul>

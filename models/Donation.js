@@ -11,8 +11,8 @@ const donateSchema = new mongoose.Schema({
     type: String,
   },
   confirmation: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: 'Waiting for confirmation',
   }
 });
 

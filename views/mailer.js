@@ -6,21 +6,21 @@ module.exports = async function main(to, subject, text) {
   // Only needed if you don't have a real mail account for testing
   let testAccount = await nodemailer.createTestAccount();
 
-  // create reusable transporter object using the default SMTP transport
+
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
       user: "noreplybackeryhelper@gmail.com",
-      pass: "Zxc!1234",
+      pass: "Asdfg!4321",
     },
   });
   //noreplybackeryhelper@gmail.com
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"Backery Help " <noreplybackeryhelper@gmail.com>', // sender address
+    from: '"Backery Help " <noreplyiranbackery@gmail.com>"',
     to,
     subject,
     text,

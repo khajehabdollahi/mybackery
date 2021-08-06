@@ -1,0 +1,13 @@
+ <% layout('layout/boilerplate') %> 
+<h1>Here you can reset your password</h1>
+
+<form action="/resetpass/<%=username%>?_method=PUT " method="POST">
+        
+         <label>Password</label>
+          <input type="password" placeholder="Enter Password" name="password">
+          <p style="color: red;"><%=(typeof errors!='undefined' && typeof errors.password!='undefined' )? errors.password.msg:''%></p>
+          <!-- <label>Confirm Password</label>
+          <input type="Password" placeholder="Enter Confirm Password" name="confirmPassword">
+          <p style="color: red;"><%=(typeof errors!='undefined' && typeof errors.confirmPassword!='undefined' )? errors.confirmPassword.msg:''%></p>  -->
+          <button type="submit">Submit</button>
+          </form>

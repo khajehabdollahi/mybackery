@@ -6,8 +6,21 @@
 <li>Owners Family: <%= backery.ownersFamily %> </li>
 <li>Number Of Poor People: <%= backery.numberOfPoorPeople %> </li>
 <li>Average Monthly Incom Per Person: <%= backery.averageMonthlyIncomPerPerson %> </li>
+<li>Backery provience: <%= backery.provience %> </li>
+<li>Backery City: <%= backery.city %> </li>
+<li>Backery district: <%= backery.district %> </li>
+<li>Backery Village: <%= backery.village %> </li>
+<li>Backery Street: <%= backery.Street %> </li>
+<li>Backery number: <%= backery.number %> </li>
+<li>Backery postCode: <%= backery.postCode %> </li>
+<li>Backery Mobile Number: <%= backery.mobileNumber %> </li>
+<li>Backery City: <%= backery.city %> </li>
+<li>Backery Provience: <%= backery.provience %> </li>
 <li>Backery Location: <%= backery.location %> </li>
-<li>Backery Id: <%= backery.id %> </li>
+
+  
+
+
 <img src=<%=backery.image %> alt="Backery Image" width="100%"> 
 
 <h1>Donations</h1>
@@ -15,8 +28,12 @@
 <% for (let donate of donations.reverse()) {%> 
   <ul>
     <li>Donated Amount: <%=donate.amount  %>   SEK</li>
-    <li>Confirmation: <%=donate.confirmation  %>   </li>
-    <li><a href="http:/donateconfirm/<%= donate.id  %> ">Confirm Donation</a></li>
+    <li>  <h3> by: <a href="/users/<%=donate.doneatorId %>"><%=donate.doneatorId%></a>  </h3></li>
+
+    <li>Confirmed: <%=donate.confirmation  %>   </li>
+   <% if(currentUser && currentUser.username==backery.creator.username) {%> 
+   <a href="http:/donateconfirm/<%= donate.id  %> ">Confirm Donation</a>
+<% } %> 
     <li><a href="http:/addimage/<%= donate.id  %>"></a> Add image</li>
 
   </ul>
@@ -53,7 +70,7 @@
 
 
 
-   <% if(!currentUser || currentUser.role !='backer' ) { %> 
+   <% if(!currentUser || currentUser.role !='B' ) { %> 
 
 <br/>
 

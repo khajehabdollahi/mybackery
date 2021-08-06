@@ -5,13 +5,15 @@
       <div class="card">
         <div class="row">
           <div class="col-md-12">
-<!--   
-  <li>User Id: <%= user.id %> <br/>  -->
+  
+  <li>User Id: <%= user.id %> <br/>  
     <li>Email: <%= user.username %> <br/> 
     <li>Name: <%= user.name %> <br/> 
     <li>Role: <%= user.role %> <br/> 
     
-    <a href="/users/<%= user.id %>">Click here to see details</a>
+    <a href="/users/<%= user.id %>"><%= user.username %></a>
+
+    
     
      
   
