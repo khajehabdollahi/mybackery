@@ -2,30 +2,27 @@
 <% layout('layout/boilerplate') %> 
   <h1> Here is Login Page </h1>
 
-  <container  class="d-flex column-justify-content-center">
-<div>
-<form  action="/login" method="POST" class="validated-form novalidate ">
+<container  class="d-flex justify-content-center" >
+  <div class="text-center mr-5">
+    <form  action="/login" method="POST" class="validated-form novalidate ">
+      <div class="mb-3">
+      <label class="form-label" for="username">Email</label><br>
+      <input class="form-control" type="email" name="username" id="username" placeholder="email"required>      
+    </div>
 
-  <div class="mb-3">
-  <label class="form-label" for="username">Email</label><br>
-  <input class="form-control" type="email" name="username" id="username" placeholder="email"required>
-  
-</div>
+    <div class="mb-3">
+      <label class="form-label" for="password">Password</label><br>
+      <input class="form-control" type="password" name="password" id="password" required>
+    </div>
 
+    <button type="submit" class="btn-success">LOG IN</button> <br/>
+    <a href="/forgetpass">Forgot Password?</a>
+    </form>
+  </div>
 
-<div class="mb-3">
-  <label class="form-label" for="password">Password</label><br>
-  <input class="form-control" type="password" name="password" id="password" required>
-</div>
-
-<button type="submit" class="button-success">LOG IN</button> <br/>
-<a href="/forgetpass">Forgot Password?</a>
-
-</form>
-</div>
-<br/>
-<div display=flex, class="ml-5" "mt=15"><br/>
-<h6 >Don't you have an account?</h6> <br>
- <a class="nav-link" href='/Register'>Register Account</a>
-</div>
- </container>
+  <br/>
+  <div display=flex, class="ml-5 pl-5" "mt=15"><br/>
+    <h6 >Don't you have an account?</h6> <br>
+   <h3> <a class="nav-link" href='/Register'>Register Account</a></h3>
+  </div>
+</container>

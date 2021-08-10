@@ -28,7 +28,7 @@
 <% for (let donate of donations.reverse()) {%> 
   <ul>
     <li>Donated Amount: <%=donate.amount  %>   SEK</li>
-    <li>  <h3> by: <a href="/users/<%=donate.doneatorId %>"><%=donate.doneatorId%></a>  </h3></li>
+    <li>  <h3> by: <a href="/users/<%=donate.doneatorId %>"><%=donate.donatorsname%></a>  </h3></li>
 
     <li>Confirmed: <%=donate.confirmation  %>   </li>
    <% if(currentUser && currentUser.username==backery.creator.username) {%> 
@@ -84,8 +84,3 @@
  <% }%>
 
 
- <!-- <script>
-  function confirmDonation(){
-    console.log("I am in the click!"); 
-  }
-</script> -->

@@ -335,6 +335,38 @@ app.get("/donate/:id", (req, res) => {
   res.render("donate", { id });
 });
 
+app.get("/users/:username", async (req, res) => {
+  const { username } = req.params;
+  console.log("username: ", username);
+  const user = await User.findById(username);
+  console.log(user);
+  res.render("showuser", { user });
+});
+
+app.get("/donate/:id", (req, res) => {
+  const { id } = req.params;
+
+  res.render("donate", { id });
+});
+
+app.post("/d", async (req, res) => {
+  // const donate=req.body
+  const donated = new Donate(req.body);
+
+  donated.backeryId = req.body.backeryId;
+  // donated.donatorsname = req.body.doneatorId;
+
+  const donator = await User.findById(req.body.doneatorId);
+ 
+  donated.donatorsname = donator.name;
+
+
+  await donated.save();
+
+  res.redirect("/");
+  // res.render("donated", {id, donateAmount });
+});
+
 app.get("/donateconfirm/:id", async (req, res) => {
   const { id } = req.params;
   const donate = await Donate.findById(id);
@@ -352,26 +384,9 @@ app.put("/donateconfirm/:id", async (req, res) => {
   res.redirect(`/backeries`);
 });
 
-// app.put("/donate/:id", async (req, res) => {
-//   const { id } = req.params;
-//   const backery = await Newbackery.findByIdAndUpdate(id, req.body, {
-//     runValidators: true,
-//     new: true,
-//   });
-//   res.redirect("/backeries");
-// });
 
-app.post("/d", async (req, res) => {
-  // const donate=req.body
-  const donated = new Donate(req.body);
 
-  donated.backeryId = req.body.backeryId;
-  donated.donatorId = req.body.donatorId;
-  await donated.save();
 
-  res.redirect("/");
-  // res.render("donated", {id, donateAmount });
-});
 
 app.get("/search", (req, res) => {
   res.render("search");

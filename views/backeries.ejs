@@ -1,9 +1,9 @@
 <% layout('layout/boilerplate') %> 
   <h1>Here you can see all backeries</h1>
 
-  <ul>
+  <ul style="list-style-type:none">
     <% for(let backry of backeries) { %>
-      <div class="card">
+     
         <div class="row">
           <div class="col-md-12">
         <li><h2>  <a href="/newb/<%= backry.id %>"><%= backry.backerysname %></a></h2></li>    
@@ -13,7 +13,7 @@
     </li> 
           </div>
         </div>
-      </div>
+
    
 
    <%} %>

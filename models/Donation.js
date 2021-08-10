@@ -13,6 +13,9 @@ const donateSchema = new mongoose.Schema({
   confirmation: {
     type: String,
     default: 'Waiting for confirmation',
+  },
+  donatorsname: {
+    type: String,
   }
 });
 

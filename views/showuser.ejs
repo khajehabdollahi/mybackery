@@ -11,8 +11,10 @@
 
 
 <a href="/newones">Create backery</a> <br/>
-
-
+<% if(!currentUser.activated) { %> 
+<br>
+ <h4>You haven't activated your Email yet</h4>
+ <h4>Open your Email and activate ur id pls</h4>
+<% } %> 
 <% } %> 
 
- <a href="http://activate/<%= user.id%> ">Activate ur id pls</a> 

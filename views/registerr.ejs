@@ -1,38 +1,40 @@
 <% layout('layout/boilerplate') %>
 <h1>Here is place to register</h1>
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <div class="col">
+      <form  action="/register" method="POST" class="validated-form novalidate">
+        <div class="mb-3">
+          <label class="form-label" for="username">Email</label><br>
+          <input class="form-control" type="email" name="username" placeholder=""id="email" placeholder="email"required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="name">Write your name</label><br>
+          <input class="form-control" type="text" name="name" id="name" placeholder="Please write ur name" required>
+        </div>
 
-<form  action="/register" method="POST" class="validated-form novalidate ">
+        <div class="mb-3">
+          <label class="form-label" for="role">Role Plese select which role do you want:<br/> Are you a backer,<br/>
+            do you want to donate money (D) <br/> 
+            Do to help backeris to create account for them (V)<br/>
+            Are you a bakcker (B)
+          </label><br>
+          <select name="role" id="role">
+            <option>Please Sclect Your role</option>
+            <option  value="Volenteer" > Volenteer</option>
+            <option value="Donator" > Donator</option>
+            <option value="Backer">Backer</option>
+          </select>
+          
 
-  <div class="mb-3">
-  <label class="form-label" for="username">Email</label><br>
-  <input class="form-control" type="email" name="username" placeholder=""id="email" placeholder="email"required>
-  
+        <div class="mb-3">
+          <label class="form-label" for="password">Password</label><br>
+          <input class="form-control" type="password" name="password" id="password" required>
+        </div>
+
+        <button type="submit" class="button-success">Register</button><br><br>
+      </form>
+
+    </div>
+  </div>
 </div>
-<div class="mb-3">
-  <label class="form-label" for="name">Write your name</label><br>
-  <input class="form-control" type="text" name="name" id="name" placeholder="Please write ur name" required>
-</div>
-
-<div class="mb-3">
-  <label class="form-label" for="role">Role Plese select which role do you want:<br/> Are you a backer,<br/>
-    do you want to donate money (D) <br/> 
-    Do to help backeris to create account for them (V)<br/>
-    Are you a bakcker (B)
-  </label><br>
-  <select name="role" id="role">
-    <option>Please Sclect Your role</option>
-    <option  value="Volenteer" > Volenteer</option>
-    <option value="Donator" > Donator</option>
-    <option value="Backer">Backer</option>
-  </select>
-  
-
-<div class="mb-3">
-  <label class="form-label" for="password">Password</label><br>
-  <input class="form-control" type="password" name="password" id="password" required>
-</div>
-
-<button type="submit" class="button-success">Register</button><br><br>
-
-</form>
-
