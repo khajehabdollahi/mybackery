@@ -26,6 +26,8 @@ const MongoStore = require("connect-mongo");
 
 const multer = require("multer");
 
+const uuid = require("uuid");
+
 const { storage } = require("./cloudinary/index");
 const console = require("console");
 
@@ -262,7 +264,8 @@ app.post("/login", async (req, res, next) => {
 });
 
 app.get("/forgetpass", (req, res) => {
-  res.render("foreget");
+let tempid = uuid.v4();
+  res.render("foreget", {tempid});
 });
 
 // app.post("/forgetpass", (req, res) => {
@@ -271,8 +274,12 @@ app.get("/forgetpass", (req, res) => {
 //   console.log("FOUND USER", user.name)
 // })
 
-app.post("/forgetpass", async (req, res) => {
+
+  
+app.post("/forgetpass/:tempid", async (req, res) => {
+  const {tempid}=await req.params;
   const { username } = req.body;
+
   await User.find({ username }, function (err, user) {
     if (err) {
       console.log(err);
@@ -282,7 +289,7 @@ app.post("/forgetpass", async (req, res) => {
         username,
         "Welcome to web",
         "Yes you are very welcome now \n please activate ur account by clicking this link\n \n (http://localhost:3000/resetpass/" +
-          username
+          tempid+'/'+username
       );
       //Detta lokal host ska ändras till domänen
     }
@@ -290,13 +297,15 @@ app.post("/forgetpass", async (req, res) => {
 });
 
 //RESET PASSWORD
-app.get("/resetpass/:username", (req, res) => {
-  const { username } = req.params;
-  res.render("resetpass", { username });
+app.get("/resetpass/:tempid/:username", async (req, res) => {
+  const { tempid } =await  req.params;
+  const { username } =await req.params;
+  res.render("resetpass", { tempid,username });
 });
 
-app.put("/resetpass/:username", async (req, res) => {
-  const { username } = req.params;
+app.put("/resetpass/:tempid/:username", async (req, res) => {
+  const { username } = req.body;
+  console.log(username.substring(username.indexOf("/") + 1));
   const { password } = req.body;
 
   await User.findOne({ username }, (err, user) => {
@@ -306,11 +315,11 @@ app.put("/resetpass/:username", async (req, res) => {
       console.log("USER:", user);
       user.setPassword(password, (error, returnedUser) => {
         if (error) {
-          console.log(error)
+          console.log(error);
         } else {
-           returnedUser.save();
+          returnedUser.save();
         }
-      });      
+      });
       res.send(username);
     }
   });
@@ -325,11 +334,12 @@ app.get("/users/:id", async (req, res) => {
   const { id } = req.params;
   console.log("id: ", id);
   const user = await User.findById(id);
-  console.log(user);
-  res.render("showuser", { user });
+  const backery = await Newbackery.find({ "creator.id": id });
+  console.log(backery);
+  res.render("showuser", { user, backery});
 });
 
-app.get("/donate/:id", (req, res) => {
+app.get("/donate/:id", requiredLogin, (req, res) => {
   const { id } = req.params;
 
   res.render("donate", { id });
@@ -343,7 +353,7 @@ app.get("/users/:username", async (req, res) => {
   res.render("showuser", { user });
 });
 
-app.get("/donate/:id", (req, res) => {
+app.get("/donate/:id",  (req, res) => {
   const { id } = req.params;
 
   res.render("donate", { id });

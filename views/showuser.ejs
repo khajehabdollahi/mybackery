@@ -5,6 +5,13 @@
  Email: <%= user.username %> <br>
  Name: <%= user.name %> <br>
  Role: <%= user.role %> <br>
+  Backaries: <br>
+ <% for(let backer of backery) {%> 
+  <a href="/newb/<%=backer._id%> "><%= backer.backerysname %></a> <br>
+      
+
+<% } %> 
+ 
 <br>
  
 <% if(currentUser && currentUser.username == user.username ) { %> 

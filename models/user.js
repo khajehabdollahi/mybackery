@@ -18,7 +18,9 @@ let userSchema = new mongoose.Schema({
   },
   activated: {
     type: Boolean
-    
+  },
+  backries:{
+    type: Array,
   }
 });
 
